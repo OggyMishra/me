@@ -1,0 +1,8 @@
+[project]
+name = "sourabhmishra-portfolio"
+version = "2.0.0"
+description = "Git-themed developer portfolio for sourabhmishra.in"
+requires-python = ">=3.11"
+
+[tool.ruff]
+line-length = 100

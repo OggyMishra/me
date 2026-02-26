@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% set current_page = "about" %}
+
+{% block title %}About — {{ site.name }}{% endblock %}
+
+{% block content %}
+<!-- Profile Section -->
+<div class="profile-section fade-in">
+  <div class="profile-avatar">SM</div>
+  <div class="profile-info">
+    <h1>{{ site.name }}</h1>
+    <div class="role">Senior Software Engineer</div>
+    <p class="bio">
+      Software engineer with 10+ years of experience building backend systems, data pipelines,
+      and developer tools. Started with Python and C#, now primarily working in Python and Go.
+      Interested in system design, distributed architectures, and making complex things simple.
+    </p>
+  </div>
+</div>
+
+<!-- Experience Timeline (git log style) -->
+<section class="fade-in fade-in-delay-1">
+  <div class="section-heading">
+    <span class="icon">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M1.643 3.143L.427 1.927A.25.25 0 01.604 1.5H2.75A.25.25 0 013 1.75v2.146a.25.25 0 01-.427.177L1.357 2.858A6.001 6.001 0 018 14a6.001 6.001 0 005.715-7.865.75.75 0 011.43.45A7.5 7.5 0 118 .5c1.562 0 3.008.478 4.207 1.293L13.857 0h2.143a.25.25 0 01.177.427L14.82 1.784A7.469 7.469 0 0115.5 5.5a.75.75 0 01-1.5 0c0-1.38-.463-2.652-1.243-3.667L11.2 3.39A.25.25 0 0110.823 3.214V1.5H9.25a.25.25 0 01-.177-.427l1.643-1.643A.25.25 0 0111.143.427L9.857 1.714a6.001 6.001 0 00-8.214 1.429z"/></svg>
+    </span>
+    git log --oneline
+  </div>
+  <div class="commit-timeline">
+    {% for entry in experience %}
+    {% include "components/commit_card.html" %}
+    {% endfor %}
+  </div>
+</section>
+
+<!-- Skills (diff stat style) -->
+<section class="skills-section fade-in fade-in-delay-2">
+  <div class="section-heading">
+    <span class="icon">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8.75 1.75a.75.75 0 00-1.5 0V5H4a.75.75 0 000 1.5h3.25v3.25a.75.75 0 001.5 0V6.5H12A.75.75 0 0012 5H8.75V1.75z"/></svg>
+    </span>
+    git diff --stat
+  </div>
+  {% for skill in skills %}
+  <div class="skill-row">
+    <span class="skill-name">{{ skill.name }}</span>
+    <div class="skill-bar-bg">
+      <div class="skill-bar-fill" style="width: {{ skill.level }}%; background: {{ skill.color }};"></div>
+    </div>
+    <span class="skill-pct">{{ skill.level }}%</span>
+  </div>
+  {% endfor %}
+</section>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% set current_page = "blog" %}
+
+{% block title %}{{ post.title }} — {{ site.name }}{% endblock %}
+
+{% block head %}
+{% if pygments_css %}
+<style>{{ pygments_css }}</style>
+{% endif %}
+{% endblock %}
+
+{% block content %}
+<article>
+  <div class="post-header fade-in">
+    <div style="margin-bottom: var(--space-md);">
+      {% if post.status == 'merged' %}
+      <span class="badge badge-purple">Merged</span>
+      {% else %}
+      <span class="badge badge-green">Open</span>
+      {% endif %}
+    </div>
+    <h1>{{ post.title }}</h1>
+    <div class="post-meta">
+      <span>sourabh.mishra</span>
+      <span>{{ post.date }}</span>
+      <span>{{ post.reading_time }} min read</span>
+      {% for tag in post.tags %}
+      <span class="tag-pill">{{ tag }}</span>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="post-content fade-in fade-in-delay-1">
+    {{ post.content | safe }}
+  </div>
+
+  <div style="margin-top: var(--space-2xl); padding-top: var(--space-xl); border-top: 1px solid var(--border);">
+    <a href="/blog">&larr; Back to all posts</a>
+  </div>
+</article>
+{% endblock %}

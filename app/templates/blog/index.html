@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% set current_page = "blog" %}
+
+{% block title %}Blog — {{ site.name }}{% endblock %}
+
+{% block content %}
+<div class="page-header fade-in">
+  <h1>Blog</h1>
+  <p>Technical posts and engineering notes.</p>
+</div>
+
+{% if posts %}
+<div class="pr-list fade-in fade-in-delay-1">
+  {% for post in posts %}
+  <div class="pr-item">
+    <div class="pr-icon {{ post.status }}">
+      {% if post.status == 'merged' %}
+      <svg viewBox="0 0 16 16" fill="currentColor"><path d="M5.45 5.154A4.25 4.25 0 0 0 9.25 7.5h1.378a2.251 2.251 0 1 1 0 1.5H9.25A5.734 5.734 0 0 1 5 7.123v3.505a2.25 2.25 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.95-.218zM4.25 13.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5zm8.5-4.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5zM5 3.25a.75.75 0 1 0 0 .005V3.25z"/></svg>
+      {% else %}
+      <svg viewBox="0 0 16 16" fill="currentColor"><path d="M7.177 3.073L9.573.677A.25.25 0 0110 .854v4.792a.25.25 0 01-.427.177L7.177 3.427a.25.25 0 010-.354zM3.75 2.5a.75.75 0 100 1.5.75.75 0 000-1.5zm-2.25.75a2.25 2.25 0 113 2.122v5.256a2.251 2.251 0 11-1.5 0V5.372A2.25 2.25 0 011.5 3.25zM11 2.5h-1V4h1a1 1 0 011 1v5.628a2.251 2.251 0 101.5 0V5A2.5 2.5 0 0011 2.5zm1 10.25a.75.75 0 111.5 0 .75.75 0 01-1.5 0zM3.75 12a.75.75 0 100 1.5.75.75 0 000-1.5z"/></svg>
+      {% endif %}
+    </div>
+    <div class="pr-body">
+      <div class="pr-title"><a href="/blog/{{ post.slug }}">{{ post.title }}</a></div>
+      <div class="pr-meta">
+        <span class="pr-number">#{{ loop.index }}</span>
+        <span>{{ post.date }}</span>
+        <span>{{ post.reading_time }} min read</span>
+        <span>opened by sourabh.mishra</span>
+      </div>
+      {% if post.description %}
+      <div class="pr-preview">{{ post.description }}</div>
+      {% endif %}
+      {% if post.tags %}
+      <div class="pr-tags">
+        {% for tag in post.tags %}
+        <span class="tag-pill">{{ tag }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% else %}
+<div class="empty-state fade-in fade-in-delay-1">
+  <p>No posts yet. Check back soon.</p>
+</div>
+{% endif %}
+{% endblock %}

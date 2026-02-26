@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+{% set current_page = "home" %}
+
+{% block title %}{{ site.name }} — Developer Portfolio{% endblock %}
+
+{% block content %}
+<!-- README Card -->
+<div class="readme-card fade-in">
+  <div class="readme-header">
+    <span class="file-icon">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M0 1.75A.75.75 0 01.75 1h4.253c1.227 0 2.317.59 3 1.501A3.744 3.744 0 0111.006 1h4.245a.75.75 0 01.75.75v10.5a.75.75 0 01-.75.75h-4.507a2.25 2.25 0 00-1.591.659l-.622.621a.75.75 0 01-1.06 0l-.622-.621A2.25 2.25 0 005.258 13H.75a.75.75 0 01-.75-.75V1.75zm7.251 10.324l.004-.001 7.246.001V2.5h-3.495a2.25 2.25 0 00-2.25 2.25v7.324zm-1.502 0V4.75a2.25 2.25 0 00-2.25-2.25H.75v9.574h4.508a3.744 3.744 0 01.491.026z"/></svg>
+    </span>
+    README.md
+  </div>
+  <div class="readme-body">
+    <h1>Sourabh Mishra</h1>
+    <div class="badges">
+      <span class="badge badge-blue">Python</span>
+      <span class="badge badge-blue">GoLang</span>
+      <span class="badge badge-green">Senior Engineer</span>
+      <span class="badge badge-purple">10+ years</span>
+      <span class="badge badge-orange">Backend Systems</span>
+    </div>
+    <p>
+      Senior Software Engineer with over a decade of experience building scalable backend systems,
+      data pipelines, and APIs. Passionate about clean architecture, performance optimization,
+      and solving real-world problems with Python and Go.
+    </p>
+    <p>
+      Currently at <strong>AlphaSense</strong>, working on market intelligence infrastructure.
+      Previously built financial data platforms at Visible Alpha and FactSet.
+    </p>
+
+    <h2>Contents</h2>
+    <ul class="toc-list">
+      <li><a href="/about">About &amp; Experience</a></li>
+      <li><a href="/blog">Blog Posts</a></li>
+      <li><a href="/projects">Projects</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- Contribution Graph (decorative) -->
+<div class="contrib-graph fade-in fade-in-delay-1">
+  <div class="section-heading">
+    <span class="icon">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M10 13a1 1 0 100-2 1 1 0 000 2zm-4 0a1 1 0 100-2 1 1 0 000 2zm1-5a1 1 0 100-2 1 1 0 000 2zm3-1a1 1 0 11-2 0 1 1 0 012 0zm-7 1a1 1 0 100-2 1 1 0 000 2zm7-5a1 1 0 11-2 0 1 1 0 012 0zM6 4a1 1 0 100-2 1 1 0 000 2z"/></svg>
+    </span>
+    Activity
+  </div>
+  <div class="contrib-grid" id="contrib-grid"></div>
+</div>
+
+<!-- Pinned Repositories -->
+<section class="fade-in fade-in-delay-2" style="margin-top: var(--space-2xl);">
+  <div class="section-heading">
+    <span class="icon">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M4.456.734a1.75 1.75 0 012.826.504l.613 1.327a3.08 3.08 0 002.084 1.707l2.454.584c1.332.317 1.8 1.972.832 2.94L11.06 10l.16.67a1.75 1.75 0 01-1.227 2.074L7.271 13.5a1.75 1.75 0 01-2.022-.827L3.2 9.159a3.08 3.08 0 00-1.707-1.482L.134 7.09a1.75 1.75 0 01-.054-3.286l1.41-.477a3.08 3.08 0 001.653-1.353L4.456.734z"/></svg>
+    </span>
+    Pinned
+  </div>
+  <div class="repo-grid">
+    {% for project in projects %}
+    <div class="repo-card">
+      <div class="repo-card-name">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" style="color: var(--text-muted); vertical-align: text-bottom;"><path d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 010-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1h-8a1 1 0 00-1 1v6.708A2.486 2.486 0 014.5 9h8V1.5z"/></svg>
+        <a href="{{ project.url }}" target="_blank" rel="noopener">{{ project.name }}</a>
+      </div>
+      <div class="repo-card-desc">{{ project.description }}</div>
+      <div class="repo-tags">
+        {% for tag in project.tags %}
+        <span class="tag-pill">{{ tag }}</span>
+        {% endfor %}
+      </div>
+      <div class="repo-card-meta">
+        <span><span class="lang-dot" style="background: {{ project.language_color }};"></span>{{ project.language }}</span>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- Recent Blog Posts -->
+{% if recent_posts %}
+<section class="fade-in fade-in-delay-3" style="margin-top: var(--space-2xl);">
+  <div class="section-heading">
+    <span class="icon">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M7.177 3.073L9.573.677A.25.25 0 0110 .854v4.792a.25.25 0 01-.427.177L7.177 3.427a.25.25 0 010-.354zM3.75 2.5a.75.75 0 100 1.5.75.75 0 000-1.5zm-2.25.75a2.25 2.25 0 113 2.122v5.256a2.251 2.251 0 11-1.5 0V5.372A2.25 2.25 0 011.5 3.25zM11 2.5h-1V4h1a1 1 0 011 1v5.628a2.251 2.251 0 101.5 0V5A2.5 2.5 0 0011 2.5zm1 10.25a.75.75 0 111.5 0 .75.75 0 01-1.5 0zM3.75 12a.75.75 0 100 1.5.75.75 0 000-1.5z"/></svg>
+    </span>
+    Recent Posts
+  </div>
+  <div class="pr-list">
+    {% for post in recent_posts %}
+    <div class="pr-item">
+      <div class="pr-icon {{ post.status }}">
+        {% if post.status == 'merged' %}
+        <svg viewBox="0 0 16 16" fill="currentColor"><path d="M5.45 5.154A4.25 4.25 0 0 0 9.25 7.5h1.378a2.251 2.251 0 1 1 0 1.5H9.25A5.734 5.734 0 0 1 5 7.123v3.505a2.25 2.25 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.95-.218zM4.25 13.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5zm8.5-4.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5zM5 3.25a.75.75 0 1 0 0 .005V3.25z"/></svg>
+        {% else %}
+        <svg viewBox="0 0 16 16" fill="currentColor"><path d="M7.177 3.073L9.573.677A.25.25 0 0110 .854v4.792a.25.25 0 01-.427.177L7.177 3.427a.25.25 0 010-.354zM3.75 2.5a.75.75 0 100 1.5.75.75 0 000-1.5zm-2.25.75a2.25 2.25 0 113 2.122v5.256a2.251 2.251 0 11-1.5 0V5.372A2.25 2.25 0 011.5 3.25zM11 2.5h-1V4h1a1 1 0 011 1v5.628a2.251 2.251 0 101.5 0V5A2.5 2.5 0 0011 2.5zm1 10.25a.75.75 0 111.5 0 .75.75 0 01-1.5 0zM3.75 12a.75.75 0 100 1.5.75.75 0 000-1.5z"/></svg>
+        {% endif %}
+      </div>
+      <div class="pr-body">
+        <div class="pr-title"><a href="/blog/{{ post.slug }}">{{ post.title }}</a></div>
+        <div class="pr-meta">
+          <span class="pr-number">#{{ loop.index }}</span>
+          <span>{{ post.date }}</span>
+          <span>{{ post.reading_time }} min read</span>
+        </div>
+        {% if post.tags %}
+        <div class="pr-tags">
+          {% for tag in post.tags %}
+          <span class="tag-pill">{{ tag }}</span>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+{% endblock %}
