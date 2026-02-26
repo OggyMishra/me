@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sourabh Mishra — Developer Portfolio</title>
+  <meta name="description" content="Senior Software Engineer with 10+ years of experience in Python, GoLang, and distributed systems.">
+  <link rel="icon" href="/static/images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/static/css/style.css">
+  
+</head>
+<body>
+  <header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="repo-path" style="text-decoration:none;">
+      sourabh.mishra<span class="separator">/</span><span class="current-page">home</span>
+    </a>
+
+    <button class="mobile-toggle" id="mobile-menu-btn" aria-label="Toggle navigation">
+      <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor">
+        <path d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 010 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 010 1.5H1.75A.75.75 0 011 7.75zm0 5a.75.75 0 01.75-.75h12.5a.75.75 0 010 1.5H1.75a.75.75 0 01-.75-.75z"/>
+      </svg>
+    </button>
+
+    <nav class="nav-tabs" id="main-nav">
+      <a href="/" class="active">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M6.906.664a1.749 1.749 0 012.188 0l5.25 4.2a.75.75 0 01-.938 1.172L13 5.712V14.5a.75.75 0 01-.75.75H3.75a.75.75 0 01-.75-.75V5.712l-.406.324a.75.75 0 01-.938-1.172l5.25-4.2zM4.5 6.387V13.75h7V6.387l-3.5-2.8-3.5 2.8z"/></svg>
+        main
+      </a>
+      <a href="/about" class="">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M10.561 8.073a6.005 6.005 0 013.432 5.142.75.75 0 11-1.498.07 4.5 4.5 0 00-8.99 0 .75.75 0 01-1.498-.07 6.005 6.005 0 013.432-5.142 3.999 3.999 0 115.122 0zM10.5 5a2.5 2.5 0 10-5 0 2.5 2.5 0 005 0z"/></svg>
+        about
+      </a>
+      <a href="/blog" class="">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M1.75 1.5a.25.25 0 00-.25.25v12.5c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25V1.75a.25.25 0 00-.25-.25H1.75zM0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v12.5A1.75 1.75 0 0114.25 16H1.75A1.75 1.75 0 010 14.25V1.75zM3.5 4.75a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zm.75 3.25a.75.75 0 000 1.5h4.5a.75.75 0 000-1.5h-4.5z"/></svg>
+        blog
+      </a>
+      <a href="/projects" class="">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 010-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1h-8a1 1 0 00-1 1v6.708A2.486 2.486 0 014.5 9h8V1.5z"/></svg>
+        projects
+      </a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-btn" id="theme-toggle" aria-label="Toggle theme" title="Toggle dark/light mode">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786z"/></svg>
+      </button>
+      <a class="icon-btn" href="https://github.com/OggyMishra" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+      </a>
+      <a class="icon-btn" href="https://www.linkedin.com/in/sourabh-mishra-8a815998/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/></svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+  <main class="site-main fade-in">
+    
+<!-- README Card -->
+<div class="readme-card fade-in">
+  <div class="readme-header">
+    <span class="file-icon">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M0 1.75A.75.75 0 01.75 1h4.253c1.227 0 2.317.59 3 1.501A3.744 3.744 0 0111.006 1h4.245a.75.75 0 01.75.75v10.5a.75.75 0 01-.75.75h-4.507a2.25 2.25 0 00-1.591.659l-.622.621a.75.75 0 01-1.06 0l-.622-.621A2.25 2.25 0 005.258 13H.75a.75.75 0 01-.75-.75V1.75zm7.251 10.324l.004-.001 7.246.001V2.5h-3.495a2.25 2.25 0 00-2.25 2.25v7.324zm-1.502 0V4.75a2.25 2.25 0 00-2.25-2.25H.75v9.574h4.508a3.744 3.744 0 01.491.026z"/></svg>
+    </span>
+    README.md
+  </div>
+  <div class="readme-body">
+    <h1>Sourabh Mishra</h1>
+    <div class="badges">
+      <span class="badge badge-blue">Python</span>
+      <span class="badge badge-blue">GoLang</span>
+      <span class="badge badge-green">Senior Engineer</span>
+      <span class="badge badge-purple">10+ years</span>
+      <span class="badge badge-orange">Backend Systems</span>
+    </div>
+    <p>
+      Senior Software Engineer with over a decade of experience building scalable backend systems,
+      data pipelines, and APIs. Passionate about clean architecture, performance optimization,
+      and solving real-world problems with Python and Go.
+    </p>
+    <p>
+      Currently at <strong>AlphaSense</strong>, working on market intelligence infrastructure.
+      Previously built financial data platforms at Visible Alpha and FactSet.
+    </p>
+
+    <h2>Contents</h2>
+    <ul class="toc-list">
+      <li><a href="/about">About &amp; Experience</a></li>
+      <li><a href="/blog">Blog Posts</a></li>
+      <li><a href="/projects">Projects</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- Contribution Graph (decorative) -->
+<div class="contrib-graph fade-in fade-in-delay-1">
+  <div class="section-heading">
+    <span class="icon">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M10 13a1 1 0 100-2 1 1 0 000 2zm-4 0a1 1 0 100-2 1 1 0 000 2zm1-5a1 1 0 100-2 1 1 0 000 2zm3-1a1 1 0 11-2 0 1 1 0 012 0zm-7 1a1 1 0 100-2 1 1 0 000 2zm7-5a1 1 0 11-2 0 1 1 0 012 0zM6 4a1 1 0 100-2 1 1 0 000 2z"/></svg>
+    </span>
+    Activity
+  </div>
+  <div class="contrib-grid" id="contrib-grid"></div>
+</div>
+
+<!-- Pinned Repositories -->
+<section class="fade-in fade-in-delay-2" style="margin-top: var(--space-2xl);">
+  <div class="section-heading">
+    <span class="icon">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M4.456.734a1.75 1.75 0 012.826.504l.613 1.327a3.08 3.08 0 002.084 1.707l2.454.584c1.332.317 1.8 1.972.832 2.94L11.06 10l.16.67a1.75 1.75 0 01-1.227 2.074L7.271 13.5a1.75 1.75 0 01-2.022-.827L3.2 9.159a3.08 3.08 0 00-1.707-1.482L.134 7.09a1.75 1.75 0 01-.054-3.286l1.41-.477a3.08 3.08 0 001.653-1.353L4.456.734z"/></svg>
+    </span>
+    Pinned
+  </div>
+  <div class="repo-grid">
+    
+    <div class="repo-card">
+      <div class="repo-card-name">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" style="color: var(--text-muted); vertical-align: text-bottom;"><path d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 010-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1h-8a1 1 0 00-1 1v6.708A2.486 2.486 0 014.5 9h8V1.5z"/></svg>
+        <a href="https://github.com/OggyMishra/bowling-scorer" target="_blank" rel="noopener">bowling-scorer</a>
+      </div>
+      <div class="repo-card-desc">A real-time bowling score calculator built with Node.js and Bootstrap. Handles all standard bowling scoring rules including strikes, spares, and the 10th frame.</div>
+      <div class="repo-tags">
+        
+        <span class="tag-pill">node.js</span>
+        
+        <span class="tag-pill">bootstrap</span>
+        
+        <span class="tag-pill">game</span>
+        
+      </div>
+      <div class="repo-card-meta">
+        <span><span class="lang-dot" style="background: #f1e05a;"></span>JavaScript</span>
+      </div>
+    </div>
+    
+    <div class="repo-card">
+      <div class="repo-card-name">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" style="color: var(--text-muted); vertical-align: text-bottom;"><path d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 010-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1h-8a1 1 0 00-1 1v6.708A2.486 2.486 0 014.5 9h8V1.5z"/></svg>
+        <a href="https://github.com/OggyMishra" target="_blank" rel="noopener">image-captioning</a>
+      </div>
+      <div class="repo-card-desc">Deep learning model using CNN-RNN architecture to generate natural language descriptions of images. Helps visually impaired users understand image content.</div>
+      <div class="repo-tags">
+        
+        <span class="tag-pill">deep-learning</span>
+        
+        <span class="tag-pill">computer-vision</span>
+        
+        <span class="tag-pill">accessibility</span>
+        
+      </div>
+      <div class="repo-card-meta">
+        <span><span class="lang-dot" style="background: #3572A5;"></span>Python</span>
+      </div>
+    </div>
+    
+    <div class="repo-card">
+      <div class="repo-card-name">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" style="color: var(--text-muted); vertical-align: text-bottom;"><path d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 010-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1h-8a1 1 0 00-1 1v6.708A2.486 2.486 0 014.5 9h8V1.5z"/></svg>
+        <a href="https://github.com/OggyMishra/me" target="_blank" rel="noopener">sourabhmishra.in</a>
+      </div>
+      <div class="repo-card-desc">This portfolio site — a git-themed static site built with FastAPI, Jinja2, and custom CSS. Frozen to static HTML for GitHub Pages deployment.</div>
+      <div class="repo-tags">
+        
+        <span class="tag-pill">portfolio</span>
+        
+        <span class="tag-pill">fastapi</span>
+        
+        <span class="tag-pill">static-site</span>
+        
+      </div>
+      <div class="repo-card-meta">
+        <span><span class="lang-dot" style="background: #3572A5;"></span>Python</span>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+<!-- Recent Blog Posts -->
+
+<section class="fade-in fade-in-delay-3" style="margin-top: var(--space-2xl);">
+  <div class="section-heading">
+    <span class="icon">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M7.177 3.073L9.573.677A.25.25 0 0110 .854v4.792a.25.25 0 01-.427.177L7.177 3.427a.25.25 0 010-.354zM3.75 2.5a.75.75 0 100 1.5.75.75 0 000-1.5zm-2.25.75a2.25 2.25 0 113 2.122v5.256a2.251 2.251 0 11-1.5 0V5.372A2.25 2.25 0 011.5 3.25zM11 2.5h-1V4h1a1 1 0 011 1v5.628a2.251 2.251 0 101.5 0V5A2.5 2.5 0 0011 2.5zm1 10.25a.75.75 0 111.5 0 .75.75 0 01-1.5 0zM3.75 12a.75.75 0 100 1.5.75.75 0 000-1.5z"/></svg>
+    </span>
+    Recent Posts
+  </div>
+  <div class="pr-list">
+    
+    <div class="pr-item">
+      <div class="pr-icon merged">
+        
+        <svg viewBox="0 0 16 16" fill="currentColor"><path d="M5.45 5.154A4.25 4.25 0 0 0 9.25 7.5h1.378a2.251 2.251 0 1 1 0 1.5H9.25A5.734 5.734 0 0 1 5 7.123v3.505a2.25 2.25 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.95-.218zM4.25 13.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5zm8.5-4.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5zM5 3.25a.75.75 0 1 0 0 .005V3.25z"/></svg>
+        
+      </div>
+      <div class="pr-body">
+        <div class="pr-title"><a href="/blog/2024-csharp-features">C# 6.0 Features That Changed How I Write Code</a></div>
+        <div class="pr-meta">
+          <span class="pr-number">#1</span>
+          <span>2024-03-05</span>
+          <span>1 min read</span>
+        </div>
+        
+        <div class="pr-tags">
+          
+          <span class="tag-pill">csharp</span>
+          
+          <span class="tag-pill">dotnet</span>
+          
+          <span class="tag-pill">language-features</span>
+          
+        </div>
+        
+      </div>
+    </div>
+    
+    <div class="pr-item">
+      <div class="pr-icon merged">
+        
+        <svg viewBox="0 0 16 16" fill="currentColor"><path d="M5.45 5.154A4.25 4.25 0 0 0 9.25 7.5h1.378a2.251 2.251 0 1 1 0 1.5H9.25A5.734 5.734 0 0 1 5 7.123v3.505a2.25 2.25 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.95-.218zM4.25 13.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5zm8.5-4.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5zM5 3.25a.75.75 0 1 0 0 .005V3.25z"/></svg>
+        
+      </div>
+      <div class="pr-body">
+        <div class="pr-title"><a href="/blog/2024-bowling-scorer">Building a Bowling Score Calculator</a></div>
+        <div class="pr-meta">
+          <span class="pr-number">#2</span>
+          <span>2024-02-10</span>
+          <span>1 min read</span>
+        </div>
+        
+        <div class="pr-tags">
+          
+          <span class="tag-pill">javascript</span>
+          
+          <span class="tag-pill">node.js</span>
+          
+          <span class="tag-pill">algorithms</span>
+          
+        </div>
+        
+      </div>
+    </div>
+    
+    <div class="pr-item">
+      <div class="pr-icon merged">
+        
+        <svg viewBox="0 0 16 16" fill="currentColor"><path d="M5.45 5.154A4.25 4.25 0 0 0 9.25 7.5h1.378a2.251 2.251 0 1 1 0 1.5H9.25A5.734 5.734 0 0 1 5 7.123v3.505a2.25 2.25 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.95-.218zM4.25 13.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5zm8.5-4.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5zM5 3.25a.75.75 0 1 0 0 .005V3.25z"/></svg>
+        
+      </div>
+      <div class="pr-body">
+        <div class="pr-title"><a href="/blog/2024-socket-exception">Socket Exception with HttpClient in C#</a></div>
+        <div class="pr-meta">
+          <span class="pr-number">#3</span>
+          <span>2024-01-15</span>
+          <span>1 min read</span>
+        </div>
+        
+        <div class="pr-tags">
+          
+          <span class="tag-pill">csharp</span>
+          
+          <span class="tag-pill">dotnet</span>
+          
+          <span class="tag-pill">debugging</span>
+          
+        </div>
+        
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+
+  </main>
+
+  <footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-branch">
+      <span class="branch-icon">
+        <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d="M11.75 2.5a.75.75 0 100 1.5.75.75 0 000-1.5zm-2.25.75a2.25 2.25 0 113 2.122V6A2.5 2.5 0 0110 8.5H6a1 1 0 00-1 1v1.128a2.251 2.251 0 11-1.5 0V5.372a2.25 2.25 0 111.5 0v1.836A2.492 2.492 0 016 7h4a1 1 0 001-1v-.628A2.25 2.25 0 019.5 3.25zM4.25 12a.75.75 0 100 1.5.75.75 0 000-1.5zM3.5 3.25a.75.75 0 111.5 0 .75.75 0 01-1.5 0z"/></svg>
+      </span>
+      <span>main</span>
+    </div>
+    <div class="footer-center">
+      Last commit: 2025
+    </div>
+    <div>sourabhmishra.in</div>
+  </div>
+</footer>
+
+  <script src="/static/js/main.js"></script>
+  
+</body>
+</html>
